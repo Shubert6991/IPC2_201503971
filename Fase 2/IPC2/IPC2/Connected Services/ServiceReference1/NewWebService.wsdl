@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://IPC2/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="NewWebService" targetNamespace="http://IPC2/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/IPC2/NewWebService?xsd=1" namespace="http://IPC2/" />
+    </xsd:schema>
+  </types>
+  <message name="hello">
+    <part name="parameters" element="tns:hello" />
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse" />
+  </message>
+  <portType name="NewWebService">
+    <operation name="hello">
+      <input wsam:Action="http://IPC2/NewWebService/helloRequest" message="tns:hello" />
+      <output wsam:Action="http://IPC2/NewWebService/helloResponse" message="tns:helloResponse" />
+    </operation>
+  </portType>
+  <binding name="NewWebServicePortBinding" type="tns:NewWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="NewWebService">
+    <port name="NewWebServicePort" binding="tns:NewWebServicePortBinding">
+      <soap:address location="http://localhost:8080/IPC2/NewWebService" />
+    </port>
+  </service>
+</definitions>
