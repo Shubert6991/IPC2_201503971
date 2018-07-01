@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://PaqueteDePrueba/" targetNamespace="http://PaqueteDePrueba/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AgregarAdmin" type="tns:AgregarAdmin" />
+  <xs:element name="AgregarAdminResponse" type="tns:AgregarAdminResponse" />
+  <xs:element name="ConsultarUsuario" type="tns:ConsultarUsuario" />
+  <xs:element name="ConsultarUsuarioResponse" type="tns:ConsultarUsuarioResponse" />
+  <xs:element name="Prueba2" type="tns:Prueba2" />
+  <xs:element name="Prueba2Response" type="tns:Prueba2Response" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:complexType name="AgregarAdmin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="apellido" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="notarjeta" type="xs:string" />
+      <xs:element minOccurs="0" name="rol" type="xs:string" />
+      <xs:element minOccurs="0" name="suscription" type="xs:string" />
+      <xs:element minOccurs="0" name="nusuarios" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregarAdminResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hello" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Prueba2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="apellido" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="notarjeta" type="xs:string" />
+      <xs:element minOccurs="0" name="rol" type="xs:string" />
+      <xs:element minOccurs="0" name="suscription" type="xs:string" />
+      <xs:element minOccurs="0" name="nusuarios" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Prueba2Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsultarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsultarUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

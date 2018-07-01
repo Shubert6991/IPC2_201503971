@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://PaqueteDePrueba/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServicioPrueba" targetNamespace="http://PaqueteDePrueba/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/NintyIPC2/ServicioPrueba?xsd=1" namespace="http://PaqueteDePrueba/" />
+    </xsd:schema>
+  </types>
+  <message name="AgregarAdmin">
+    <part name="parameters" element="tns:AgregarAdmin" />
+  </message>
+  <message name="AgregarAdminResponse">
+    <part name="parameters" element="tns:AgregarAdminResponse" />
+  </message>
+  <message name="hello">
+    <part name="parameters" element="tns:hello" />
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse" />
+  </message>
+  <message name="Prueba2">
+    <part name="parameters" element="tns:Prueba2" />
+  </message>
+  <message name="Prueba2Response">
+    <part name="parameters" element="tns:Prueba2Response" />
+  </message>
+  <message name="ConsultarUsuario">
+    <part name="parameters" element="tns:ConsultarUsuario" />
+  </message>
+  <message name="ConsultarUsuarioResponse">
+    <part name="parameters" element="tns:ConsultarUsuarioResponse" />
+  </message>
+  <portType name="ServicioPrueba">
+    <operation name="AgregarAdmin">
+      <input wsam:Action="http://PaqueteDePrueba/ServicioPrueba/AgregarAdminRequest" message="tns:AgregarAdmin" />
+      <output wsam:Action="http://PaqueteDePrueba/ServicioPrueba/AgregarAdminResponse" message="tns:AgregarAdminResponse" />
+    </operation>
+    <operation name="hello">
+      <input wsam:Action="http://PaqueteDePrueba/ServicioPrueba/helloRequest" message="tns:hello" />
+      <output wsam:Action="http://PaqueteDePrueba/ServicioPrueba/helloResponse" message="tns:helloResponse" />
+    </operation>
+    <operation name="Prueba2">
+      <input wsam:Action="http://PaqueteDePrueba/ServicioPrueba/Prueba2Request" message="tns:Prueba2" />
+      <output wsam:Action="http://PaqueteDePrueba/ServicioPrueba/Prueba2Response" message="tns:Prueba2Response" />
+    </operation>
+    <operation name="ConsultarUsuario">
+      <input wsam:Action="http://PaqueteDePrueba/ServicioPrueba/ConsultarUsuarioRequest" message="tns:ConsultarUsuario" />
+      <output wsam:Action="http://PaqueteDePrueba/ServicioPrueba/ConsultarUsuarioResponse" message="tns:ConsultarUsuarioResponse" />
+    </operation>
+  </portType>
+  <binding name="ServicioPruebaPortBinding" type="tns:ServicioPrueba">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="AgregarAdmin">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Prueba2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ConsultarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServicioPrueba">
+    <port name="ServicioPruebaPort" binding="tns:ServicioPruebaPortBinding">
+      <soap:address location="http://localhost:8080/NintyIPC2/ServicioPrueba" />
+    </port>
+  </service>
+</definitions>
